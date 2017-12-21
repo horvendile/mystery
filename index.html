@@ -1,0 +1,85 @@
+<html>
+<head>
+  <style>
+    html, body {
+      margin: 0;
+      padding: 0;
+      background-color: midnightblue;
+      font-family: 'Source Sans Pro', Helvetica, Arial, sans-serif;
+    }
+    p {
+      margin: 10px
+    }
+    button{
+      font-family: monospace;
+      font-size: 40px;
+      height:50px;
+      border-style: outset;
+      border-radius: 10px;
+      text-align: center;
+      cursor: pointer;
+      background-color: white;
+    }
+    button:hover{
+      background-color: lightgrey;
+    }
+    button:active{
+      color:#f00;
+      border-style:inset;
+    }
+    .background {
+      position: absolute;
+      display: block;
+      top: 0px;
+      bottom:0px;
+      left: 0px;
+      right: 0px;
+      z-index: 0;
+    }
+    .flex-container {
+      position:absolute;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      top:10px;
+      bottom:10px;
+      left:10px;
+      right:10px;
+      background-color: alicseblue;
+    }
+    .flex-container>div {
+      background-color: pink;
+      width: 500px;
+      height: 300px;
+    }
+  </style>
+
+
+</head>
+<body>
+  <canvas class="background"></canvas>
+  <div class="flex-container" >
+    <div>
+      <script>
+      function autorun(){
+
+        Particles.init({
+          selector: '.background',
+          color: '#75A5B7',
+          maxParticles: 200,
+          connectParticles: true,
+          speed:1,
+          sizeVariations:3,
+        });
+
+      }
+      if (document.addEventListener) document.addEventListener("DOMContentLoaded", autorun, false);
+      else if (document.attachEvent) document.attachEvent("onreadystatechange", autorun);
+      else window.onload = autorun;
+    </script>
+    </div>
+  </div>
+  <script src="particles.js-master/dist/particles.min.js"></script>
+
+</body>
+</html>
